@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, only: [:edit]
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
